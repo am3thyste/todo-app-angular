@@ -1,5 +1,35 @@
+<label>Server Name</label>
+<!-- <input 
+type="text" 
+class="form-control"
+(input)="onUpdateServerName($event)"> -->
+
+<input 
+type="text" 
+class="form-control"
+[(ngModel)] = "serverName">
+
+<p>{{serverName}}</p>
 <button class = "btn btn-primary" 
-[disabled] = "!allowNewServer">Add Server</button>
-<p [innerText] = "allowNewServer"></p>
+[disabled] = "!allowNewServer"
+(click)="onCreateServer()" >Add Server</button>
+<!--<p [innerText] = "allowNewServer"></p> -->
+<p>{{serverCreationStatus}}</p>
 <app-server></app-server>
 <app-server></app-server>
+
+<!-- Add a input field which updates a property ('username') via Two-Way-Binding: -->
+<hr>
+<label>Username</label>
+<input 
+type="text" 
+class="form-control"
+[(ngModel)] = "username">
+
+<!-- Output the username property via String Interpolation (in a paragraph below the input) : -->
+<p>{{username}}</p>
+
+<!--Add a button  which may only be clicked if the username is NOT an empty string: -->
+<button class="btn btn-primary" 
+[disabled] = "username ===''"
+(click)="username = ''">Empty Username</button>
