@@ -12,6 +12,7 @@ export class ServersComponent implements OnInit {
   serverName= 'testServer';
   username = '';
   emptyUsername=true;
+  serverCreated=false;
 
   constructor() { 
     setTimeout(() => {
@@ -24,6 +25,7 @@ this.allowNewServer = true;
   }
 
   onCreateServer(){
+    this.serverCreated = true;
     this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
   }
 
