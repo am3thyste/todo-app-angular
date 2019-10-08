@@ -13,6 +13,10 @@ export class ServersComponent implements OnInit {
   username = '';
   emptyUsername=true;
   serverCreated=false;
+  servers = ['TestServer', 'TestServer 2'];
+  detailsDisplayed = false;
+  buttonClicks = [];
+  colorButtonClick = '';
 
   constructor() { 
     setTimeout(() => {
@@ -27,10 +31,17 @@ this.allowNewServer = true;
   onCreateServer(){
     this.serverCreated = true;
     this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
+    this.servers.push(this.serverName);
   }
 
   onUpdateServerName(event: Event){
 this.serverName = (<HTMLInputElement>event.target).value;
   }
 
+  onToggleDisplay(){
+    this.detailsDisplayed = !this.detailsDisplayed;
+    this.buttonClicks.push(this.buttonClicks.length + 1);
+  }
+
 }
+
