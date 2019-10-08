@@ -47,9 +47,9 @@ class="form-control"
 <p *ngIf = "detailsDisplayed">Secret Password = lasagna</p>
 
 <!--Log all button clicks on an array and output that array below the secret paragraph-->
-<p *ngFor= "let buttonClick of buttonClicks"
-[ngStyle] = "{backgroundColor: buttonClick >=5 ? 'blue' : 'transparent'}"
-[ngClass] = "{buttonClickBackground: buttonClick >=5}"
+<p *ngFor= "let buttonClick of buttonClicks; let i = index"
+[ngStyle] = "{backgroundColor: i > 4 ? 'blue' : 'transparent'}"
+[ngClass] = "{buttonClickBackground: i > 4}"
 >{{buttonClick}}</p>
 
 <!--Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white class (ngClass):-->

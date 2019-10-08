@@ -40,7 +40,9 @@ this.serverName = (<HTMLInputElement>event.target).value;
 
   onToggleDisplay(){
     this.detailsDisplayed = !this.detailsDisplayed;
-    this.buttonClicks.push(this.buttonClicks.length + 1);
+    // this.buttonClicks.push(this.buttonClicks.length + 1);
+    this.buttonClicks.push(new Date());
+
   }
 
 }
