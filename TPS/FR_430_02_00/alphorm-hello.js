@@ -1,24 +1,24 @@
 "use strict";
 class AlphormHello extends HTMLElement {    // You can extend any other element or Class
 
-    constructor() {                   
-       super();                         //  construct the original item to be extended, here it is the HTMLElement
-       console.log("constructor")
-    }
-    
- connectedCallback(){
-     console.log("connectedCallback")
-     let shadowDom = this.attachShadow({mode:"open"});
-     shadowDom.innerHTML="<h2>Hello Alphorm </h2>"
- }
- disconnectedCallback(){
-    console.log("disconnectedCallback")
+   constructor() {
+      super();                         //  construct the original item to be extended, here it is the HTMLElement
+      console.log("constructor")
+   }
 
- }
- attributeChabgedCallback(){
-    console.log("attributeChabgedCallback")
+   connectedCallback() {
+      console.log("connectedCallback")
+      this.innerHTML = "<h2>Hello Alphorm</h2>";
 
- }  
- }
+   }
+   disconnectedCallback() {
+      console.log("disconnectedCallback")
 
- window.customElements.define("alphorm-hello", AlphormHello);
+   }
+   attributeChabgedCallback() {
+      console.log("attributeChangedCallback")
+
+   }
+}
+
+window.customElements.define("alphorm-hello", AlphormHello);

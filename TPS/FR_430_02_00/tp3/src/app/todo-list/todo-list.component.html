@@ -1,0 +1,21 @@
+<form #todoForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <input type="number" placeholder="id" [(ngModel)]='model.id' name="id" required>
+    </div>
+    <div class="form-group">
+        <input #todoAction="ngModel" type="text" placeholder="action" [(ngModel)]='model.action' name="action" required>
+        <div [hidden]="todoAction.valid">
+            Erreur
+        </div>
+    </div>
+
+    <div class="form-group">
+        <select class="form-group" placeholder="place" [(ngModel)]='model.place' name="place">
+            <option *ngFor="let place of places">{{place}}</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block" [disabled]='!todoForm.form.valid'>Envoyer</button>
+
+
+</form>
