@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import { InMemoryWebApiModule } from '@angular-in-memory-web-api';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { TodoService } from './TodoService';
-
 
 import { AppComponent } from './app.component';
 
@@ -15,9 +15,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     FormsModule,
-    InMemoryWebApiModule.forRoot(TodoService)
+    InMemoryWebApiModule.forRoot(TodoService, { passThruUnknownUrl: true }),
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

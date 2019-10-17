@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+
+  <nav>
+    <a routerLink="/comp1" routerLinkActive="active">Component 1</a> <br>
+    <a routerLink="/comp2" routerLinkActive="active">Component 2</a> <br>
+    <a [routerLink]="['/comp1', 'un_param']" routerLinkActive="active">Component 1 avec param</a> <br>
+
+  </nav>
+  <router-outlet> </router-outlet>
