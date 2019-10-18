@@ -1,0 +1,21 @@
+{
+	"type": "Collection",
+	"properties": {
+		"action": {
+			"name": "action",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "action",
+			"order": 0
+		},
+		"dueDate": {
+			"name": "dueDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "dueDate",
+			"order": 1
+		}
+	}
+}

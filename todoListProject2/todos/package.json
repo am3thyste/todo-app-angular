@@ -1,0 +1,11 @@
+{
+  "engines": {
+    "node": ">= 4.0"
+  },
+  "dependencies": {
+    "@angular/http": "^2.1.2",
+    "deployd": "^1.0.0",
+    "dpd-clientlib": "^0.0.1",
+    "dpd-dashboard": "^0.0.1"
+  }
+}
