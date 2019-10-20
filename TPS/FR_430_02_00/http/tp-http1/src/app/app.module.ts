@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+
 import { TodoService } from './TodoService';
 
 import { AppComponent } from './app.component';
@@ -17,7 +18,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    InMemoryWebApiModule.forRoot(TodoService, { passThruUnknownUrl: true }),
+    InMemoryWebApiModule.forRoot(TodoService),
     HttpModule
   ],
   providers: [],

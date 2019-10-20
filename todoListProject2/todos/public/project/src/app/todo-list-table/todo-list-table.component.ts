@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http'
+import { HttpClient} from '@angular/common/http'
 
 import { Observable } from 'rxjs/Rx';
 
@@ -11,11 +11,11 @@ import { Observable } from 'rxjs/Rx';
 export class TodoListTableComponent implements OnInit {
   private url = "http://localhost:2403/todos";
   todos = [];
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
 
   ngOnInit() {
-    this.http.get(this.url).subscribe(response => this.todos = response.json);
+    this.http.get(this.url).subscribe(response => response.valueOf);
   }
 
 }

@@ -23,8 +23,7 @@ export class AppComponent implements OnInit {
   }
 
   loadData() {
-    this.http.get(this.todosUrl).toPromise().then(response => {
-      console.log(response);
+    this.http.get('api/todos').toPromise().then(response => {
       this.todos = response.json().data
     });
   }
